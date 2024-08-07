@@ -1,0 +1,40 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:color';
+
+// main Bootstrap Module
+@use 'plugins/_bootstrap.min.scss';
+
+@use '_config.scss' as *;
+
+
+// |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾| //
+// | Timedoor New Standard                   | //
+// |_________________________________________| //
+
+/* root font-size variable -- start */
+:root {
+    @include fontVar();
+}
+/* root font-size variable -- end */
+
+/* create font-size class -- start */
+@include printFontClass();
+/* create font-size class -- end */
+
+/* ratio-item class -- start */
+.ratio-item {
+    @extend %ratioItem;
+}
+/* ratio-item class -- end */
+
+// |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾| //
+// | CUSTOM CODE START HERE                  | //
+// |_________________________________________| //
+
+// this code is only example, you can delete the code here
+.container {
+    @media (min-width: 1199px) {
+        max-width: 90%;
+    }
+}

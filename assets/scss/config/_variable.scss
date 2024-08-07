@@ -1,0 +1,224 @@
+@use 'sass:map';
+@use 'sass:math';
+
+// |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾| //
+// | tmdrVar v.1.0.1                         | //
+// | last update : 03 / 04 / 2024            | //
+// |_________________________________________| //
+
+$themeUnit: 'vw';
+
+$desktopBreakpoints: (
+    1920,
+    1199,
+);
+
+$mobileBreakpoints: (
+    767,
+    480,
+    430,
+    375,
+);
+
+// color example taken from Prime Timedoor - Codex Figma
+// https://www.figma.com/file/g2yHdGMKnPH04ho4YFkPuJ/Prime-Codex?type=design&node-id=201-215&mode=design&t=TV1N2RPkAGXwE5UU-0
+
+$color: (
+    blue: (
+        default: #0A0547,
+        80: #3B376C,
+        bg: #ECECFC
+    ),
+    gold: (
+        default: #CBA030,
+        80: #D5B359
+    ),
+    success: (
+        default: #2D6E50
+    ),
+    danger: (
+        default: #CB3A31,
+    ),
+    black: (
+        default: #161616,
+    ),
+    gray: (
+        default: #f2f2f2,
+    ),
+    white: (
+        default: #ffffff,
+    ),
+);
+
+$fontSizes: (
+    display-1: (
+        desktop: (
+            font-size: 70,
+            font-weight: 800,
+            line-height: 1.1
+        ),
+        mobile: (
+            font-size: 40,
+            text-decoration: underline
+        ),
+        480:(
+            text-transform: uppercase
+        ),
+    ),
+    heading-1: (
+        desktop: (
+            font-size: 48,
+            font-weight: 800,
+            line-height: 1.1
+        ),
+        mobile: (
+            font-size: 32,
+        )
+    ),
+    heading-2: (
+        desktop: (
+            font-size: 40,
+            font-weight: 600,
+            line-height: 1.1
+        ),
+        mobile: (
+            font-size: 24
+        )
+    ),
+    title-1: (
+        desktop: (
+            font-size: 18,
+            font-weight: 700
+        ),
+        mobile: (
+            font-size: 16,
+        )
+    ),
+    body-xl-bold: (
+        desktop: (
+            font-size: 24,
+            font-weight: 600
+        ),
+        mobile: (
+            font-size: 20,
+        )
+    ),
+    body-xl: (
+        desktop: (
+            font-size: 24,
+            line-height: 1.1,
+        ),
+        mobile: (
+            font-size: 14,
+        )
+    ),
+    body-l-bold: (
+        desktop: (
+            font-size: 20,
+            font-weight: 800,
+            line-height: 1.1
+        ),
+        mobile: (
+            font-size: 18
+        )
+    ),
+    body-l: (
+        desktop: (
+            font-size: 20,
+            line-height: 1.1
+        ),
+        mobile: (
+            font-size: 18
+        )
+    ),
+    body-m-medium: (
+        desktop: (
+            font-size: 18,
+            font-weight: 500,
+            line-height: 1.5
+        ),
+        mobile: (
+            font-size: 16
+        )
+    ),
+    body-m: (
+        desktop: (
+            font-size: 18,
+            line-height: 1.5
+        ),
+        mobile: (
+            font-size: 16
+        )
+    ),
+    body-s: (
+        desktop: (
+            font-size: 16
+        ),
+        mobile: (
+            font-size: 16
+        )
+    ),
+    nav-link: (
+        desktop: (
+            font-size: 18,
+        ),
+        1199: (
+            font-size: 24,
+        ),
+        767: (
+            font-size: 32
+        ),
+        mobile: (
+            font-size: 20
+        )
+    ),
+    button: (
+        desktop: (
+            font-size: 18,
+            font-weight: 500,
+            line-height: math.div(28, 18)
+        ),
+        mobile: (
+            font-size: 18
+        )
+    ),
+    form-title: (
+        desktop: (
+            font-size: 18,
+            font-weight: 500
+        ),
+        mobile: (
+            font-size: 16
+        )
+    ),
+    table-header: (
+        desktop: (
+            font-size: 14,
+            font-weight: 500,
+            line-height: math.div(16, 14)
+        ),
+        mobile: (
+            font-size: 14
+        )
+    ),
+    tag-bold: (
+        desktop: (
+            font-size: 14,
+            font-weight: 600,
+            line-height: math.div(16, 14)
+        ),
+        mobile: (
+            font-size: 12
+        )
+    ),
+    tag: (
+        desktop: (
+            font-size: 14,
+            font-weight: 600,
+            line-height: math.div(16, 14)
+        ),
+        mobile: (
+            font-size: 14
+        )
+    )
+);
