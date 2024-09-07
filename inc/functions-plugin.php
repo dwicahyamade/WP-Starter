@@ -143,6 +143,13 @@ function tmdr_theme_required_plugins() {
             'slug'             => 'heartbeat-control',
             'required'         => true,
         ),
+
+        // --- NEW
+        array(
+            'name'             => 'Wider Admin Menu',
+            'slug'             => 'wider-admin-menu',
+            'required'         => true,
+        ),
         
     );
     

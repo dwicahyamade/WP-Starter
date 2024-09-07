@@ -65,32 +65,32 @@ function tmdr_script_enqueue() {
     // example is for page-home.php page template
     /*
     if (is_page_template('page-home.php')) {
-        tmdr_print_css('nameCss', 'page/filePath.css');
-        tmdr_print_js('nameJs', 'page/filePath.js')
+        tmdr_print_css('nameCss', 'pages/filePath.css');
+        tmdr_print_js('nameJs', 'pages/filePath.js')
     }
     */
     
     // example code to add CSS and JS to Singular Page
     /*
     if (is_singular('post_type')) {
-        tmdr_print_css('nameCss', 'page/filePath.css');
-        tmdr_print_js('nameJs', 'page/filePath.js');
+        tmdr_print_css('nameCss', 'pages/filePath.css');
+        tmdr_print_js('nameJs', 'pages/filePath.js');
     }
     */
     
     // example code to add CSS and JS to Archive Page
     /*
     if (is_archive('post_type')) {
-        tmdr_print_css('nameCss', 'page/filePath.css');
-        tmdr_print_js('nameJs', 'page/filePath.js');
+        tmdr_print_css('nameCss', 'pages/filePath.css');
+        tmdr_print_js('nameJs', 'pages/filePath.js');
     }
     */
     
     // example code to add CSS and JS to 404 Page
     /*
     if (is_404()) {
-        tmdr_print_css('404Css', 'page/404.css');
-        tmdr_print_js('404Js', 'page/404.js');
+        tmdr_print_css('404Css', 'pages/404.css');
+        tmdr_print_js('404Js', 'pages/404.js');
     }
     */
     
