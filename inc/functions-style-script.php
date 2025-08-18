@@ -59,6 +59,7 @@ function tmdr_script_enqueue() {
     
     // Global JS
     tmdr_print_js('bootstrapJs', 'bootstrap.bundle.min.js');
+    tmdr_print_js('iconifyJs', 'iconify-icon.min.js');
     tmdr_print_js('layoutJS', 'layout.js');
     
     // example code to add CSS and JS to Page Template

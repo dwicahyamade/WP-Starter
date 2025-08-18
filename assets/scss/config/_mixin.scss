@@ -1,11 +1,12 @@
 @use 'sass:math';
 @use 'sass:map';
 @use 'sass:list';
+@use 'sass:string';
 @use '_variable.scss' as var;
 @use '_function.scss' as func;
 
 // |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾| //
-// | tmdrMIX v.3.0.1                         | //
+// | tmdrMIX v.3.1.1                         | //
 // | last update : 04 / 06 / 2024            | //
 // |_________________________________________| //
 
@@ -37,31 +38,69 @@
 }
 
 // make ratio classes
-@mixin imageRatio($imageWidth, $imageHeight, $maxWidth: false, $objectFit: cover, $className : 'image') {
+@mixin imageRatio($desktopDimension, $mobileDimension: false, $maxWidth: false, $objectFit: contain, $className : 'image') {
     &__#{$className}-container {
+
+        $dektopWidth : list.nth($desktopDimension, 1);
+        $desktopHeight: null;
+        @if ( list.length($desktopDimension) > 1 ) {
+            $desktopHeight : list.nth($desktopDimension, 2);
+        } @else {
+            $desktopHeight : list.nth($desktopDimension, 1);
+        }
+
         position: relative;
         width: 100%;
+
         @if ( $maxWidth ) {
             display: inline-block;
             @if ( $maxWidth == true ) {
-                @include vwUnit(max-width, $imageWidth);
+                @include vwUnit(max-width, $dektopWidth);
             } @else {
                 @include vwUnit(max-width, $maxWidth);
             }
         } @else {
             display: block;
         }
+
         &:before {
             content: "";
             display: block;
-            padding-top: math.div($imageHeight, $imageWidth) * 100%;
+            padding-top: math.div($desktopHeight, $dektopWidth) * 100%;
         }
 
         .ratio-item {
             object-fit: $objectFit;
         }
+
+        @if ( $mobileDimension ) {
+            $mobileWidth : list.nth($mobileDimension, 1);
+            $mobileHeight : null;
+            @if ( list.length($mobileDimension) > 1 ) {
+                $mobileHeight : list.nth($mobileDimension, 2);
+            } @else {
+                $mobileHeight : list.nth($mobileDimension, 1);
+            }
+
+            @media screen and (max-width: func.mobileStart()) {
+
+                // @if ( $maxWidth ) {
+                    // @if ( $maxWidth == true ) {
+                    //     @include vwUnit(max-width, $mobileWidth);
+                    // }
+                // }
+
+                &:before {
+                    padding-top: math.div($mobileHeight, $mobileWidth) * 100%;
+                }
+
+            }
+        }
     }
 }
+
+// Image Ratio - Art DIrection
+
 
 // element state mixin
 @mixin fullState {
