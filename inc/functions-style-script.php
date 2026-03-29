@@ -58,13 +58,14 @@ function tmdr_script_enqueue() {
     tmdr_print_css('layoutCss', 'layout.css');
     
     // Global JS
+    wp_enqueue_script('jquery');
     tmdr_print_js('bootstrapJs', 'bootstrap.bundle.min.js');
     tmdr_print_js('iconifyJs', 'iconify-icon.min.js');
     tmdr_print_js('layoutJS', 'layout.js');
     
     // example code to add CSS and JS to Page Template
     // example is for page-home.php page template
-    if (is_page_template('page-home.php')) {
+    if (is_page_template('page-templates/home.php')) {
         tmdr_print_css('homeCss', 'pages/home.css');
         // tmdr_print_js('homeJs', 'pages/home.js');
     }
